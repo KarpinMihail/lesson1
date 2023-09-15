@@ -7,7 +7,7 @@ from selenium.webdriver.common.by import By
 #from selenium.webdriver.common.keys import Keys
 
 link = "https://webtucre.ru/testovaya-stranicza-6/"
-browser = webdriver.Firefox()
+browser = webdriver.Chrome()
 browser.get(link)
 # Строка поиска=search_string
 search_string = browser.find_element(By.XPATH, "/html/body/div/div[2]/div/div/main/article/div/div/div/section[2]/div/div[1]/div/div/div/form/div/input")
