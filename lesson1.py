@@ -6,10 +6,20 @@ import time
 from selenium.webdriver.common.by import By
 #from selenium.webdriver.common.keys import Keys
 
+#-----------------инициализация библиотеки для firefox-------------
+from selenium.webdriver.firefox.options import Options
+#-----------------инициализация библиотеки для firefox-------------
+#-----------------Использование Jenkins в headless режиме (без графического интерфейса)----------------
+options = Options()
+options.headless = True
+browser = webdriver.Firefox(options=options)
+#-----------------Использование Jenkins в headless режиме (без графического интерфейса)----------------
+
 link = "https://webtucre.ru/testovaya-stranicza-6/"
-browser = webdriver.Chrome()
+# browser = webdriver.Firefox() #----отключили для запуска теста для jenkins вне графического интерфейса-----
 browser.get(link)
-# Строка поиска=search_string
+
+# Строка поиска=serch_string
 search_string = browser.find_element(By.XPATH, "/html/body/div/div[2]/div/div/main/article/div/div/div/section[2]/div/div[1]/div/div/div/form/div/input")
 #Ввод поискового запроса в строку поиска
 search_string.send_keys("QA228")
